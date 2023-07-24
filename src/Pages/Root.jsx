@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography'
 const Root = () => {
   return (
     <div>
-      <Typography align="justify" variant='h2' component="h2">
+      <Typography border="1px solid black" borderLeft="3px solid black" m sx={{marginTop: "20px", backgroundColor: "royalblue", color: "white" }} align="justify" variant='h2' component="h2">
         CASTILLO
       </Typography>
       <Outlet />
