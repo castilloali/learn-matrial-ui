@@ -1,19 +1,31 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Typography from '@mui/material/Typography'
-import { Button } from '@mui/material'
-import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined';
-import { ArticleOutlined } from '@mui/icons-material';
-
+import AppBar from '@mui/material/AppBar';
+// import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
+import { Avatar, Link } from '@mui/material';
 
 const Root = () => {
   return (
     <div>
-      <Typography pl="20px" border="1px solid black" borderLeft="3px solid black" m sx={{marginTop: "20px", backgroundColor: "royalblue", color: "white" }} align="justify" variant='h2' component="h2">
-        CASTILLO
-      </Typography>
-<Button sx={{mr: "auto", ml: "auto", display: "flex"}} variant='outlined' color='secondary' startIcon={<ArticleOutlined/>} endIcon={<ArrowRightAltOutlinedIcon/>}  >dvsfv</Button>
-      <Outlet />
+      <AppBar position="static">
+        <Toolbar>
+
+
+
+
+          <Link  sx={{ flexGrow: 1, textDecoration: "none" }} color="inherit" href="/"> My Expenses</Link>
+
+<Typography variant="h6" color="white" >Castillo</Typography>
+
+<Avatar sx={{ml: "10px", width: 35, height: 35}} alt="Cemy Sharp" src="static/images/avatar/1.jpg" />
+
+
+
+          
+        </Toolbar>
+      </AppBar>
     </div>
   )
 }
