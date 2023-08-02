@@ -29,20 +29,8 @@ const Root = () => {
 
   return (
     <div>
-
-
-
-
-
-<Appbar drawerWidth={drawerWidth}/>
-
-
-
-
-
-<Drawercom drawerWidth={drawerWidth}/>
-
-
+      <Appbar drawerWidth={drawerWidth}/>
+      <Drawercom drawerWidth={drawerWidth}/>
     </div>
   )
 }

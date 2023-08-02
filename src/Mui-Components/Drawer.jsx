@@ -1,6 +1,9 @@
 import React from 'react'
 
 import { Toolbar, Divider, Drawer } from '@mui/material';
+import ListCom from './ListCom';
+
+
 
 const Drawercom = ({drawerWidth}) => {
     return (
@@ -18,8 +21,7 @@ const Drawercom = ({drawerWidth}) => {
         >
             <Toolbar />
             <Divider />
-            
-            {/* <Divider /> */}
+            <ListCom/>
         </Drawer>
     )
 }
