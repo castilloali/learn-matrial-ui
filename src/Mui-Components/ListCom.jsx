@@ -20,49 +20,84 @@ import LogoutIcon from '@mui/icons-material/Logout';
 // import { Icon } from '@mui/material';
 
 
+
+import { useNavigate } from "react-router-dom";
+
 const ListCom = () => {
+    const navigate = useNavigate();
   return (
+
+
+
+
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
     <nav aria-label="main mailbox folders">
         <List>
+
+
+
         <ListItem disablePadding>
-            <ListItemButton>
-            <ListItemIcon>
-                <HomeIcon color="primary" sx={{fontSize: "25px"}}/>
-            </ListItemIcon>
-            <ListItemText primary="Home" />
+            <ListItemButton onClick={() => {
+                navigate("/")
+            }}>
+                <ListItemIcon>
+                    <HomeIcon color="primary" sx={{fontSize: "25px"}}/>
+                </ListItemIcon>
+                <ListItemText primary="Home" />
             </ListItemButton>
         </ListItem>
+
+
+
+
         <ListItem disablePadding>
-            <ListItemButton>
-            <ListItemIcon>
-                <CreateIcon color="primary" sx={{fontSize: "25px"}}/>
-            </ListItemIcon>
-            <ListItemText primary="Create" />
+            <ListItemButton onClick={() => {
+                navigate("/Create")
+            }}>
+                <ListItemIcon>
+                    <CreateIcon color="primary" sx={{fontSize: "25px"}}/>
+                </ListItemIcon>
+                <ListItemText primary="Create" />
             </ListItemButton>
         </ListItem>
+
+
+
         <ListItem disablePadding>
-            <ListItemButton>
-            <ListItemIcon>
-                <PersonIcon color="primary" sx={{fontSize: "25px"}}/>
-            </ListItemIcon>
-            <ListItemText primary="Profile" />
+            <ListItemButton onClick={() => {
+                navigate("/Profile")
+            }}>
+                <ListItemIcon>
+                    <PersonIcon color="primary" sx={{fontSize: "25px"}}/>
+                </ListItemIcon>
+                <ListItemText primary="Profile" />
             </ListItemButton>
         </ListItem>
+
+
+
         <ListItem disablePadding>
-            <ListItemButton>
-            <ListItemIcon>
-                <SettingsIcon color="primary" sx={{fontSize: "25px"}}/>
-            </ListItemIcon>
-            <ListItemText primary="Setting" />
+            <ListItemButton onClick={() => {
+                navigate("/Setting")
+            }}>
+                <ListItemIcon>
+                    <SettingsIcon color="primary" sx={{fontSize: "25px"}}/>
+                </ListItemIcon>
+                <ListItemText primary="Setting" />
             </ListItemButton>
         </ListItem>
+
+
+
+
         <ListItem disablePadding>
-            <ListItemButton>
-            <ListItemIcon>
-                <LogoutIcon color="primary" sx={{fontSize: "25px"}}/>
-            </ListItemIcon>
-            <ListItemText primary="Logout" />
+            <ListItemButton onClick={() => {
+                navigate("/Logout")
+            }}>
+                <ListItemIcon>
+                    <LogoutIcon color="primary" sx={{fontSize: "25px"}}/>
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
             </ListItemButton>
         </ListItem>
         </List>
