@@ -7,6 +7,7 @@ import {
 import Root from "./Pages/Root";
 import Home from "./Pages/Home/Home";
 // import Create from "./Pages/Create/Create";
+import Create from "./Pages/Create/Create";
 
 
 
@@ -15,7 +16,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
-      {/* <Route path="create" element={<Create />} /> */}
+      <Route path="Create" element={<Create />} />
     </Route>
   )
 );
