@@ -8,7 +8,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 // import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
+// import DraftsIcon from '@mui/icons-material/Drafts';
 
 
 
@@ -17,6 +17,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+// import { Icon } from '@mui/material';
 
 
 const ListCom = () => {
@@ -48,8 +49,6 @@ const ListCom = () => {
             <ListItemText primary="Profile" />
             </ListItemButton>
         </ListItem>
-
-
         <ListItem disablePadding>
             <ListItemButton>
             <ListItemIcon>
