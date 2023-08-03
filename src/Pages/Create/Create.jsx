@@ -1,11 +1,20 @@
+import { Box, InputAdornment, TextField } from "@mui/material"
 
 const Create = () => {
 
     return (
   <>
-  <div>
-<h2>vvvvvvb</h2>
-  </div>
+  <Box sx={{mt:"60px"}}>
+  <TextField
+          label="With normal TextField"
+          id="filled-start-adornment"
+          sx={{ m: 1, width: '25ch' }}
+          InputProps={{
+            startAdornment: <InputAdornment position="start">kg</InputAdornment>,
+          }}
+          variant="filled"
+        />
+  </Box>
   </>
     )
   }

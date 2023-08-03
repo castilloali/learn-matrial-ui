@@ -29,7 +29,6 @@ const Root = () => {
           display: "flex",
           justifyContent: "center",
         }}
-        className="border"
       >
         <Outlet />
       </Box>

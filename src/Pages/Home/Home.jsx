@@ -3,7 +3,7 @@ import { Box, Paper, Typography, IconButton } from "@mui/material";
 
 const Home = () => {
   return (
-    <Box>
+    <Box sx={{mt: "60px"}}>
       <Paper
       elevation={3} 
         sx={{
@@ -12,7 +12,7 @@ const Home = () => {
           justifyContent: "space-between",
           mt: "22px",
           pt: "20px",
-          pb: "7px",
+          pb: "10px",
           pl: "15px",
           position: "relative",
         }}
