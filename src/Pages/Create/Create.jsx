@@ -1,19 +1,45 @@
-import { Box, InputAdornment, TextField } from "@mui/material"
+import { Box, Button, InputAdornment, TextField, styled } from "@mui/material"
+import { purple } from "@mui/material/colors";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+
+
+
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: purple[500],
+  '&:hover': {
+    backgroundColor: purple[700],
+  },
+}));
 const Create = () => {
-
     return (
   <>
-  <Box sx={{mt:"60px"}}>
+  <Box component="form" sx={{mt:"60px", width: "360px"}}>
+    
   <TextField
+        fullWidth={true}
+        label="With normal TextField"
+        sx={{ m: 1 }}
+        InputProps={{
+          startAdornment: <InputAdornment position="start">kg</InputAdornment>,
+        }}
+        variant="filled"
+        />
+        <br />
+
+
+  <TextField
+          fullWidth
           label="With normal TextField"
-          id="filled-start-adornment"
-          sx={{ m: 1, width: '25ch' }}
+          sx={{ m: 1}}
           InputProps={{
-            startAdornment: <InputAdornment position="start">kg</InputAdornment>,
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
           variant="filled"
         />
+              <ColorButton sx={{m:"10px"}} variant="contained">Custom  <ArrowForwardIosIcon  sx={{fontSize:15}} /> </ColorButton>
   </Box>
   </>
     )
