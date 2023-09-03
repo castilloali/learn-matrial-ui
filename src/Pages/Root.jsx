@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Avatar,
@@ -15,24 +15,43 @@ import Drawercom from "../Mui-Components/Drawer";
 
 import { Outlet } from "react-router-dom";
 
+
+
+
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { CssBaseline } from "@mui/material";
+import { red, teal  } from '@mui/material/colors';
+
+
 const drawerWidth = 240;
 
 const Root = () => {
+  const [myMode, setmyMode] = useState("dark")
+  
+const darkTheme = createTheme({
+  palette: {
+    mode: myMode,
+    primary: {main: teal[500], light: [300]}
+  },
+});
   return (
-    <div>
-      <Appbar drawerWidth={drawerWidth} />
-      <Drawercom drawerWidth={drawerWidth} />
 
-      <Box
-        sx={{
-          ml: `${drawerWidth}px`,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Outlet />
-      </Box>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+      <div>
+        <Appbar drawerWidth={drawerWidth} />
+        <Drawercom setmyMode={setmyMode} drawerWidth={drawerWidth} />
+        <Box
+          sx={{
+            ml: `${drawerWidth}px`,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Outlet />
+        </Box>
+      </div>
+    </ThemeProvider>
   );
 };
 
