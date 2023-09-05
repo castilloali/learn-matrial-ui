@@ -26,7 +26,7 @@ import { red, teal  } from '@mui/material/colors';
 const drawerWidth = 240;
 
 const Root = () => {
-  const [myMode, setmyMode] = useState("dark")
+  const [myMode, setmyMode] = useState(localStorage.getItem("currentMode") === null ? "light" : localStorage.getItem("currentMode") === "light" ? "light" : "dark");
   
 const darkTheme = createTheme({
   palette: {
@@ -35,12 +35,11 @@ const darkTheme = createTheme({
   },
 });
   return (
-
     <ThemeProvider theme={darkTheme}>
     <CssBaseline />
       <div>
         <Appbar drawerWidth={drawerWidth} />
-        <Drawercom setmyMode={setmyMode} drawerWidth={drawerWidth} />
+        <Drawercom myMode={myMode} setmyMode={setmyMode} drawerWidth={drawerWidth} />
         <Box
           sx={{
             ml: `${drawerWidth}px`,

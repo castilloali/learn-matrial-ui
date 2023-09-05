@@ -5,7 +5,7 @@ import ListCom from "./ListCom";
 import { useTheme } from "@emotion/react";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
 
-const Drawercom = ({ drawerWidth, setmyMode }) => {
+const Drawercom = ({ drawerWidth, setmyMode  }) => {
   const theme = useTheme();
   return (
     <Drawer
@@ -26,10 +26,10 @@ const Drawercom = ({ drawerWidth, setmyMode }) => {
                 mode
             </Button> */}
       <IconButton
-        sx={{ ml: 1 }}
         // onClick={colorMode.toggleColorMode}
         onClick={() => {
-            setmyMode(theme.palette.mode === "light" ?"dark" : "light");
+          localStorage.setItem("currentMode", theme.palette.mode === "dark" ? "light" : "dark");
+          setmyMode(theme.palette.mode === "light" ?"dark" : "light");
         }} 
         color="inherit"
       >
