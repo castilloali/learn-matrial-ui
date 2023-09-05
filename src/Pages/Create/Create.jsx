@@ -8,9 +8,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.ali.main,
   '&:hover': {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.ali.light,
   },
 }));
 const Create = () => {
