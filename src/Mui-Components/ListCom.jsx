@@ -7,37 +7,38 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-// import InboxIcon from '@mui/icons-material/Inbox';
-// import DraftsIcon from '@mui/icons-material/Drafts';
+
 
 import HomeIcon from "@mui/icons-material/Home";
 import CreateIcon from "@mui/icons-material/Create";
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
-// import { Icon } from '@mui/material';
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useTheme } from "@emotion/react";
 
 const ListCom = () => {
-  const navigate = useNavigate();
+    const theme = useTheme() 
+    const currentlocation = useLocation()
+    const navigate = useNavigate();
     return (
         <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <nav aria-label="main mailbox folders">
             <List>
-            <ListItem disablePadding>
+            <ListItem  sx={{bgcolor: currentlocation.pathname === "/" ? theme.palette.favcolor.main : null }} disablePadding>
                 <ListItemButton
                 onClick={() => {
                     navigate("/");
                 }}
                 >
-                <ListItemIcon>
-                    <HomeIcon color="primary" sx={{ fontSize: "25px" }} />
-                </ListItemIcon>
-                <ListItemText primary="Home" />
+                <ListItemIcon >
+                    <HomeIcon  color="primary" sx={{ fontSize: "25px" }} />
+                </ListItemIcon >
+                <ListItemText  primary="Home" />
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem sx={{bgcolor: currentlocation.pathname === "/Create" ? theme.palette.favcolor.main : null }} disablePadding>
                 <ListItemButton
                 onClick={() => {
                     navigate("/Create");
@@ -49,7 +50,7 @@ const ListCom = () => {
                 <ListItemText primary="Create" />
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem sx={{bgcolor: currentlocation.pathname === "/Profile" ? theme.palette.favcolor.main : null }} disablePadding>
                 <ListItemButton
                 onClick={() => {
                     navigate("/Profile");
@@ -61,7 +62,7 @@ const ListCom = () => {
                 <ListItemText primary="Profile" />
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem sx={{bgcolor: currentlocation.pathname === "/Setting" ? theme.palette.favcolor.main : null }} disablePadding>
                 <ListItemButton
                 onClick={() => {
                     navigate("/Setting");
@@ -73,7 +74,7 @@ const ListCom = () => {
                 <ListItemText primary="Setting" />
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem sx={{bgcolor: currentlocation.pathname === "/Logout" ? theme.palette.favcolor.main : null }} disablePadding>
                 <ListItemButton
                 onClick={() => {
                     navigate("/Logout");
