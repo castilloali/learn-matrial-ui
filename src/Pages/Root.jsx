@@ -42,12 +42,15 @@ const darkTheme = createTheme({
 
 
 
-  return (
+const [ TemporaryOrPermanent, setTemporaryOrPermanent ] = useState("permanent");
+const [noneOrBlock, setNoneOrBlock ] = useState("none");
+return (
+
     <ThemeProvider theme={darkTheme}>
     <CssBaseline />
       <div>
-        <Appbar drawerWidth={drawerWidth} />
-        <Drawercom  setmyMode={setmyMode} drawerWidth={drawerWidth} />
+        <Appbar drawerWidth={drawerWidth} setTemporaryOrPermanent={setTemporaryOrPermanent} setNoneOrBlock={setNoneOrBlock} />
+        <Drawercom  noneOrBlock={noneOrBlock} setNoneOrBlock={setNoneOrBlock} setTemporaryOrPermanent={setTemporaryOrPermanent} TemporaryOrPermanent={TemporaryOrPermanent} setmyMode={setmyMode} drawerWidth={drawerWidth} />
         <Box
           sx={{
             ml: { sm : `${drawerWidth}px`},
